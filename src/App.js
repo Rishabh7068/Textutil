@@ -1,24 +1,15 @@
-import logo from './logo.svg';
 import './App.css';
+import Header from './component/Header';
+import TextArea from './component/TextArea';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <>
+    <Header title = "TextCon"/>
+    <div className="container">
+      <TextArea heading = "Enter text here"/>
     </div>
+    </>
   );
 }
 
