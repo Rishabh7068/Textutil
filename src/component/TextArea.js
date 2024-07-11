@@ -8,24 +8,29 @@ export default function TextArea(props) {
   const handelonclickup = ()=>{
     let nexText = text.toUpperCase();
     setText(nexText);
+    props.showAlert("Converted to Upper case","success");
   }
   const handleonClicklo = ()=>{
     let nexText = text.toLowerCase();
     setText(nexText);
+    props.showAlert("Converted to Lower case","success");
   } 
 
   const handlecopy = ()=>{
     navigator.clipboard.writeText(text);
+    props.showAlert("Text Copied","success");
   } 
 
   const handleexspace = ()=>{
     let newText = text.split(/[ ]+/);
     setText(newText.join(" "));
+    props.showAlert("Removed Extra Space","success");
   } 
 
   const handleonClickct = ()=>{
     let nexText = "";
     setText(nexText);
+    props.showAlert("Text Cleared","success");
   } 
 
   const handleOnChange = (event)=>{
