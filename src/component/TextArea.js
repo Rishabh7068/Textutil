@@ -37,17 +37,19 @@ export default function TextArea(props) {
   return (
     <>
     <div className="container">
-        <h1>{props.heading}</h1>
+        <h1 style={{color : props.mode === 'dark' ? '#f8f9fa' : '#343a40'}}>{props.heading}</h1>
         <div className="mb-3">
-            <textarea className="form-control" value={text} onChange={handleOnChange} id="myBox" rows="8"></textarea>
+            <textarea className="form-control" value={text} onChange={handleOnChange} style={{backgroundColor :props.mode === 'dark' ? '#343a40' : '#f8f9fa',
+            color : props.mode === 'dark' ? '#f8f9fa' : '#343a40'
+            }} id="myBox" rows="8"></textarea>
         </div>
-        <buttton className="btn btn-primary mx-1" onClick={handelonclickup}>Convert to UpperCase</buttton>
+        <buttton className="btn btn-primary mx-1" onClick={handelonclickup}  >Convert to UpperCase</buttton>
         <buttton className="btn btn-primary mx-1" onClick={handleonClicklo}>Convert to UpperCase</buttton>
         <buttton className="btn btn-primary mx-1" onClick={handleonClickct}>Clear Text</buttton>
         <buttton className="btn btn-primary mx-1" onClick={handlecopy}>Copy Text</buttton>
         <buttton className="btn btn-primary mx-1" onClick={handleexspace}>Remove extra space</buttton>
     </div>
-    <div className="container my-2">
+    <div className="container my-2 " style={{color : props.mode === 'dark' ? '#f8f9fa' : '#343a40'}}>
       <h2>Your Text Summary</h2>
       <p>{text.split(" ").length} words and {text.length} characters</p>
       <p>{0.008*text.split(" ").length} Minutes Require to read</p>
