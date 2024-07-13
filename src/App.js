@@ -45,7 +45,7 @@ function App() {
         }/>
           <Route path='/'
         element={
-            <><Header title="TextUtil" mode={darkmode} togglemode={toggleMode} /><Alert alert={alert} /><TextArea heading="Enter text here" mode={darkmode} showAlert={showAlert} /></>
+            <><Header title="TextUtil" mode={darkmode} togglemode={toggleMode} /><Alert alert={alert} /><TextArea heading="Try TextUtil - Word Counter , Character Couner, Remove Extra Spaces" mode={darkmode} showAlert={showAlert} /></>
         }/>
         </Routes>
         </BrowserRouter>

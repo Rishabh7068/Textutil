@@ -48,18 +48,18 @@ export default function TextArea(props) {
             color : props.mode === 'dark' ? '#f8f9fa' : '#343a40'
             }} id="myBox" rows="8"></textarea>
         </div>
-        <buttton className="btn btn-primary mx-1" onClick={handelonclickup}  >Convert to UpperCase</buttton>
-        <buttton className="btn btn-primary mx-1" onClick={handleonClicklo}>Convert to UpperCase</buttton>
-        <buttton className="btn btn-primary mx-1" onClick={handleonClickct}>Clear Text</buttton>
-        <buttton className="btn btn-primary mx-1" onClick={handlecopy}>Copy Text</buttton>
-        <buttton className="btn btn-primary mx-1" onClick={handleexspace}>Remove extra space</buttton>
+        <button disabled={text.length === 0 } className="btn btn-primary mx-1 my-1" onClick={handleonClicklo}>Convert to LowerCase</button>
+        <button disabled={text.length === 0 } className="btn btn-primary mx-1 my-1" onClick={handleonClickct}>Clear Text</button>
+        <button disabled={text.length === 0 } className="btn btn-primary mx-1 my-1" onClick={handelonclickup}  >Convert to UpperCase</button>
+        <button disabled={text.length === 0 } className="btn btn-primary mx-1 my-1" onClick={handlecopy}>Copy Text</button>
+        <button disabled={text.length === 0 } className="btn btn-primary mx-1 my-1" onClick={handleexspace}>Remove extra space</button>
     </div>
     <div className="container my-2 " style={{color : props.mode === 'dark' ? '#f8f9fa' : '#343a40'}}>
       <h2>Your Text Summary</h2>
-      <p>{text.split(" ").length} words and {text.length} characters</p>
+      <p>{text.split(" ").filter((ele) => {return ele.length !==0 }).length} words and {text.length} characters</p>
       <p>{0.008*text.split(" ").length} Minutes Require to read</p>
       <h2>Preview</h2>
-      <p>{text}</p>
+      <p>{text.length > 0 ? text : "Nothing To Preview"}</p>
     </div>
     </>
     
