@@ -3,6 +3,12 @@ import './App.css';
 import Header from './component/Header';
 import TextArea from './component/TextArea';
 import Alert from './component/Alert';
+import About from './component/About';
+import {
+  BrowserRouter,
+  Route,
+  Routes,
+} from "react-router-dom";
 
 
 function App() {
@@ -31,14 +37,18 @@ function App() {
   }
   return (
     <>
-    <Header title = "TextUtil" mode={darkmode}  togglemode={toggleMode}/>
-    <div>
-    <Alert alert={alert}/>
-    </div>
-    
-    <div className="container">
-      <TextArea heading = "Enter text here" mode={darkmode}  showAlert={showAlert}/>
-    </div>
+    <BrowserRouter>
+    <Routes>
+        <Route path='/about'
+        element={
+            <><Header title="TextUtil" mode={darkmode} togglemode={toggleMode} /><Alert alert={alert} /><About mode={darkmode} /></>
+        }/>
+          <Route path='/'
+        element={
+            <><Header title="TextUtil" mode={darkmode} togglemode={toggleMode} /><Alert alert={alert} /><TextArea heading="Enter text here" mode={darkmode} showAlert={showAlert} /></>
+        }/>
+        </Routes>
+        </BrowserRouter>
     </>
   );
 }
