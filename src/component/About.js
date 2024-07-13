@@ -10,6 +10,7 @@ export default function About(props) {
     backgroundColor: props.mode === "dark" ? "#343a40" : "#f8f9fa",
   };
 
+  
   return (
     <div className="container">
       <h1
