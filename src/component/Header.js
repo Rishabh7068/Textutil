@@ -77,16 +77,17 @@ export default function Header(props) {
         <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
         <button className="btn btn-outline-success" type="submit">Search</button>
       </form> */}
+          
             <div className={`form-check form-switch text-${props.mode === 'light' ? 'dark' : 'light'}`} >
               <input
                 class="form-check-input"
                 type="checkbox"
                 role="switch"
                 id="flexSwitchCheckDefault"
-                onClick={props.togglemode}
+                onClick={ () => {props.togglemode(null)}}
               />
               <label className="form-check-label" htmlFor="flexSwitchCheckDefault">
-                DarkMode
+                Toggel Mode
               </label>
             </div>
           </div>
